@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="docs/assets/banner.jpg" alt="Axonota Studio — a local-first AI study notebook" width="100%" />
-</p>
-
 <h1 align="center">Axonota Studio</h1>
 
 <p align="center">
