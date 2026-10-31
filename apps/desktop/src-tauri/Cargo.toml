@@ -1,0 +1,29 @@
+[package]
+name = "note-desktop"
+version = "0.1.0"
+description = "Local-first AI study notebook"
+authors = ["you"]
+edition = "2021"
+rust-version = "1.77"
+
+[lib]
+name = "note_desktop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-http = "2"
+tauri-plugin-single-instance = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rusqlite = { version = "0.32", features = ["bundled"] }
+trash = "5"
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+strip = true

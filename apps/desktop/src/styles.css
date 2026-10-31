@@ -1,0 +1,570 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 品牌名不进入代码层：变量统一 --ax-*，类名统一 .ax-*（见 axonota.md D-032） */
+:root {
+  --ax-bg: #ffffff;
+  --ax-fg: #17181a;
+  --ax-card: #ffffff;
+  --ax-muted: #f6f6f7;
+  --ax-muted-fg: #6b7076;
+  --ax-border: #e4e5e8;
+  --ax-surface: #fafafa;
+  --ax-surface-2: #f1f2f4;
+  --ax-ink-2: #2c2e33;
+  --ax-ink-3: #8b9096;
+  --ax-accent: #2b63e8;
+  --ax-accent-soft: #eef3fe;
+  --ax-accent-line: #c9d8fb;
+  --ax-ok: #1f7a4d;
+  --ax-ok-soft: #eaf5ef;
+  --ax-ok-line: #bfe3d2;
+  --ax-warn: #8a6d00;
+  --ax-err: #b0322a;
+  --ax-err-soft: #fbeeed;
+  --ax-err-line: #f0cbc8;
+  --ax-focus: rgba(43, 99, 232, 0.28);
+  --ax-select: rgba(43, 99, 232, 0.12);
+  --ax-shadow-float: 0 12px 32px rgba(17, 18, 20, 0.1), 0 2px 8px rgba(17, 18, 20, 0.05);
+  --ax-font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  --ax-font-mono: "JetBrains Mono", "SFMono-Regular", ui-monospace, "Cascadia Mono", Menlo,
+    Consolas, monospace;
+  color-scheme: light;
+}
+
+.dark {
+  --ax-bg: #0d0e10;
+  --ax-fg: #e9eaec;
+  --ax-card: #141517;
+  --ax-muted: #1b1c1f;
+  --ax-muted-fg: #9ea3aa;
+  --ax-border: #26282c;
+  --ax-surface: #101113;
+  --ax-surface-2: #1a1b1e;
+  --ax-ink-2: #c6c9ce;
+  --ax-ink-3: #7c828a;
+  --ax-accent: #7c9df7;
+  --ax-accent-soft: #16203a;
+  --ax-accent-line: #2b3f6d;
+  --ax-ok: #6fd39a;
+  --ax-ok-soft: #16231d;
+  --ax-ok-line: #24402f;
+  --ax-err: #f08b84;
+  --ax-err-soft: #2a1a19;
+  --ax-err-line: #55231f;
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ax-font-sans);
+  color: var(--ax-fg);
+  background: var(--ax-bg);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  font: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ax-border);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ------------------------------------------------------------------ typography */
+.ax-display {
+  font-size: 40px;
+  line-height: 1.16;
+  letter-spacing: -0.028em;
+  font-weight: 600;
+}
+.ax-h1 {
+  font-size: 28px;
+  line-height: 1.28;
+  letter-spacing: -0.018em;
+  font-weight: 600;
+}
+.ax-h2 {
+  font-size: 22px;
+  line-height: 1.35;
+  letter-spacing: -0.012em;
+  font-weight: 600;
+}
+.ax-h3 {
+  font-size: 17px;
+  line-height: 1.45;
+  font-weight: 600;
+}
+.ax-body {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--ax-ink-2);
+}
+.ax-caption {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ax-muted-fg);
+}
+.ax-eyebrow {
+  font-size: 11px;
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ax-ink-3);
+}
+.ax-mono {
+  font-family: var(--ax-font-mono);
+  font-size: 12px;
+}
+
+/* --------------------------------------------------------------------- surfaces */
+.ax-panel {
+  background: var(--ax-card);
+  border: 1px solid var(--ax-border);
+  border-radius: 12px;
+}
+.ax-panel-float {
+  background: var(--ax-card);
+  border: 1px solid var(--ax-border);
+  border-radius: 12px;
+  box-shadow: var(--ax-shadow-float);
+}
+.ax-panel-flat {
+  background: var(--ax-surface);
+  border: 1px solid var(--ax-border);
+  border-radius: 8px;
+}
+
+/* ----------------------------------------------------------------------- buttons */
+.ax-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+}
+.ax-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.ax-btn-primary {
+  background: var(--ax-fg);
+  color: var(--ax-bg);
+  border-color: var(--ax-fg);
+}
+.ax-btn-primary:hover:not(:disabled) {
+  opacity: 0.86;
+}
+.ax-btn-outline {
+  background: var(--ax-card);
+  color: var(--ax-fg);
+  border-color: var(--ax-border);
+}
+.ax-btn-outline:hover:not(:disabled) {
+  background: var(--ax-muted);
+}
+.ax-btn-ghost {
+  background: transparent;
+  color: var(--ax-muted-fg);
+}
+.ax-btn-ghost:hover:not(:disabled) {
+  background: var(--ax-muted);
+  color: var(--ax-fg);
+}
+.ax-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  color: var(--ax-muted-fg);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+.ax-icon-btn:hover {
+  background: var(--ax-muted);
+  color: var(--ax-fg);
+}
+.ax-icon-btn.is-on,
+.ax-icon-btn.is-on:hover {
+  color: var(--ax-accent);
+  background: var(--ax-accent-soft);
+}
+
+/* ------------------------------------------------------------------------- chips */
+.ax-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid var(--ax-border);
+  background: var(--ax-card);
+  color: var(--ax-muted-fg);
+  font-size: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.ax-chip:hover {
+  border-color: var(--ax-ink-3);
+  color: var(--ax-fg);
+}
+.ax-chip-active {
+  background: var(--ax-surface-2);
+  border-color: var(--ax-border);
+  color: var(--ax-fg);
+}
+.ax-badge-user {
+  color: var(--ax-fg);
+  border-color: var(--ax-border);
+  background: var(--ax-surface-2);
+}
+.ax-tag-page {
+  display: inline-flex;
+  align-items: center;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 4px;
+  background: var(--ax-surface-2);
+  color: var(--ax-muted-fg);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------------------ inputs */
+.ax-input {
+  width: 100%;
+  border: 1px solid var(--ax-border);
+  border-radius: 8px;
+  background: var(--ax-card);
+  color: var(--ax-fg);
+  padding: 9px 12px;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease;
+}
+.ax-input:focus {
+  border-color: var(--ax-accent);
+  box-shadow: 0 0 0 3px var(--ax-focus);
+}
+
+/* ------------------------------------------------------------------------ 高亮 */
+.markdown mark,
+.ax-prose mark,
+mark.ax-hl {
+  background: var(--ax-mark, #fbe7a1);
+  color: inherit;
+  border-radius: 3px;
+  padding: 0 1px;
+  cursor: help;
+}
+.ax-composer {
+  border: 1px solid var(--ax-border);
+  border-radius: 12px;
+  background: var(--ax-card);
+  box-shadow: 0 1px 2px rgba(17, 18, 20, 0.04);
+}
+.ax-textarea {
+  width: 100%;
+  resize: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--ax-fg);
+}
+.ax-textarea::placeholder {
+  color: var(--ax-ink-3);
+}
+
+/* -------------------------------------------------------------------------- tree */
+.ax-tree-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 28px;
+  padding: 0 8px;
+  border-radius: 4px;
+  color: var(--ax-ink-2);
+  font-size: 12.5px;
+  cursor: pointer;
+  user-select: none;
+}
+.ax-tree-row:hover {
+  background: var(--ax-muted);
+}
+.ax-tree-row.is-active {
+  background: var(--ax-surface-2);
+  color: var(--ax-fg);
+  box-shadow: inset 2px 0 0 0 var(--ax-accent);
+}
+
+/* ---------------------------------------------------------------------- progress */
+.ax-progress {
+  height: 4px;
+  border-radius: 999px;
+  background: var(--ax-surface-2);
+  overflow: hidden;
+}
+.ax-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--ax-accent);
+  transition: width 0.2s ease;
+}
+/* 无法给出真实百分比时，用小转圈 + 文案，不做假进度条 */
+.ax-spinner {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  border: 1.5px solid var(--ax-border);
+  border-top-color: var(--ax-accent);
+  animation: ax-spin 0.9s linear infinite;
+}
+@keyframes ax-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ax-spinner {
+    animation-duration: 2.4s;
+  }
+}
+
+/* ------------------------------------------------------------------------- chat */
+.ax-bubble-user {
+  background: var(--ax-surface-2);
+  color: var(--ax-fg);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.ax-bubble-ai {
+  color: var(--ax-ink-2);
+  font-size: 13px;
+  line-height: 1.78;
+}
+.ax-bubble-ai .ax-prose {
+  font-size: 13px;
+  line-height: 1.78;
+}
+.ax-bubble-ai .ax-prose p {
+  margin: 0 0 10px;
+}
+.ax-bubble-ai .ax-prose h2 {
+  font-size: 15px;
+  margin: 16px 0 8px;
+}
+.ax-bubble-ai .ax-prose h3 {
+  font-size: 13.5px;
+  margin: 12px 0 6px;
+}
+.ax-bubble-ai .ax-prose pre {
+  margin: 10px 0 12px;
+}
+.ax-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: var(--ax-surface-2);
+  color: var(--ax-fg);
+  font-size: 11px;
+  flex: none;
+}
+
+/* ------------------------------------------------------------------------- prose */
+.ax-prose {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--ax-ink-2);
+}
+.ax-prose p {
+  margin: 0 0 14px;
+}
+.ax-prose h2 {
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 600;
+  color: var(--ax-fg);
+  margin: 30px 0 10px;
+}
+.ax-prose h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ax-fg);
+  margin: 22px 0 8px;
+}
+.ax-prose strong {
+  color: var(--ax-fg);
+  font-weight: 600;
+}
+.ax-prose ul,
+.ax-prose ol {
+  margin: 0 0 14px;
+  padding-left: 20px;
+}
+.ax-prose li {
+  margin: 4px 0;
+}
+.ax-prose blockquote {
+  margin: 16px 0;
+  padding: 10px 14px;
+  border-left: 2px solid var(--ax-border);
+  background: var(--ax-surface);
+  color: var(--ax-muted-fg);
+  border-radius: 0 8px 8px 0;
+}
+.ax-prose code {
+  font-family: var(--ax-font-mono);
+  font-size: 12px;
+  background: var(--ax-surface-2);
+  border-radius: 4px;
+  padding: 1px 5px;
+  color: var(--ax-fg);
+}
+.ax-prose pre {
+  margin: 14px 0 16px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--ax-border);
+  background: var(--ax-surface);
+  overflow-x: auto;
+  font-size: 12px;
+  line-height: 1.75;
+}
+.ax-prose pre code {
+  background: none;
+  padding: 0;
+}
+.ax-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0 18px;
+  font-size: 13px;
+}
+.ax-prose th {
+  text-align: left;
+  font-weight: 600;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--ax-border);
+  background: var(--ax-surface);
+}
+.ax-prose td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--ax-border);
+}
+.ax-prose .katex-display {
+  margin: 16px 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.ax-prose a {
+  color: var(--ax-accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ax-accent-line);
+}
+
+/* ------------------------------------------------------------------------ misc */
+.ax-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--ax-border) transparent;
+}
+.ax-link {
+  color: var(--ax-accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ax-accent-line);
+  cursor: pointer;
+}
+.ax-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  line-height: 1;
+  border: 1px solid var(--ax-border);
+  color: var(--ax-muted-fg);
+  background: var(--ax-card);
+  white-space: nowrap;
+}
+.ax-badge-run {
+  color: var(--ax-accent);
+  border-color: var(--ax-accent-line);
+  background: var(--ax-accent-soft);
+}
+.ax-badge-done {
+  color: var(--ax-ok);
+  border-color: var(--ax-ok-line);
+  background: var(--ax-ok-soft);
+}
+.ax-badge-fail {
+  color: var(--ax-err);
+  border-color: var(--ax-err-line);
+  background: var(--ax-err-soft);
+}
+.ax-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  flex: none;
+}
+.ax-fade-in {
+  animation: ax-fade 0.24s ease both;
+}
+@keyframes ax-fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ax-fade-in {
+    animation: none;
+  }
+}

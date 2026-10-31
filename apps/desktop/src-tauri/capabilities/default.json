@@ -1,0 +1,12 @@
+{
+  "identifier": "default",
+  "description": "默认窗口权限：本地文件命令 + 用户自带模型地址的 HTTP 访问",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    {
+      "identifier": "http:default",
+      "allow": [{ "url": "https://*" }, { "url": "http://*" }]
+    }
+  ]
+}
