@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="docs/assets/banner.jpg" alt="Axonota Studio — 本地优先的 AI 学习笔记本" width="100%" />
-</p>
-
 <h1 align="center">Axonota Studio</h1>
 
 <p align="center">
