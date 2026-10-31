@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="README.md">中文</a> ·
+  <a href="README.zh-CN.md">中文</a> ·
   <a href="#english">English</a> ·
   <a href="../../releases/latest">Download</a> ·
   <a href="#quick-start">Quick start</a>

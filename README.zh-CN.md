@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="#中文">中文</a> ·
-  <a href="README.en.md">English</a> ·
+  <a href="README.md">English</a> ·
   <a href="../../releases/latest">下载</a> ·
   <a href="#快速开始">快速开始</a>
 </p>
