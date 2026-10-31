@@ -1,18 +1,18 @@
 <p align="center">
-  <img src="docs/assets/banner.jpg" alt="Axonota Studio — 本地优先的 AI 学习笔记本" width="100%" />
+  <img src="docs/assets/banner.jpg" alt="Axonota Studio — a local-first AI study notebook" width="100%" />
 </p>
 
 <h1 align="center">Axonota Studio</h1>
 
 <p align="center">
-  把「学一个领域」变成一本能读、能问、能复习的本地笔记本。
+  Turn “learn a subject” into a local notebook you can read, question and revisit.
 </p>
 
 <p align="center">
-  <a href="#中文">中文</a> ·
-  <a href="README.en.md">English</a> ·
-  <a href="../../releases/latest">下载</a> ·
-  <a href="#快速开始">快速开始</a>
+  <a href="README.md">中文</a> ·
+  <a href="#english">English</a> ·
+  <a href="../../releases/latest">Download</a> ·
+  <a href="#quick-start">Quick start</a>
 </p>
 
 <p align="center">
@@ -26,51 +26,51 @@
 
 ---
 
-## 中文
+## English
 
-### 这是什么
+### What it is
 
-Axonota Studio 是一个 **本地优先（local-first）的 AI 学习笔记本**，Windows 桌面应用。
+Axonota Studio is a **local-first AI study notebook** for Windows.
 
-你给一个主题，它先和你确认学习范围，产出一份可编辑的目录树；确认后逐章逐节生成正文。生成出来的不是一段聊天记录，而是一本有结构、可回看、可追问、可导出的「书」。
+Give it a topic. It first agrees with you on scope, drafts an editable outline, and then writes chapter by chapter, section by section. What you get is not a long chat log — it is a structured book you can re-read, question, and export.
 
-数据全部落在本机 Markdown 与 JSONL 文件里。模型只在你生成或提问时按需接收相应内容，不做云端同步，也没有遥测。
+Everything is stored on your machine as plain Markdown and JSONL. Your model only receives the content needed for the request you make. No cloud sync, no telemetry.
 
-### 截图
+### Screenshots
 
-**工作台：一句主题，先出大纲，再成书**
+**Workspace — one topic, an outline first, then the book**
 
-![工作台](docs/assets/workspace.png)
+![Workspace](docs/assets/workspace.png)
 
-**思维导图视图：结构、完成度、组件页一目了然**
+**Mind map view — structure, progress and component pages at a glance**
 
-![思维导图](docs/assets/notebook.png)
+![Mind map](docs/assets/notebook.png)
 
-### 核心能力
+### Highlights
 
-- **结构先行的生成**：主题 → 学习目标与范围 → 章 / 节大纲 → 逐节正文。大纲可以先改，确认后再生成，避免一气生成一大堆跑偏的内容。
-- **整本 / 本章 / 本节批量生成**：未生成的节点可以后台排队，生成时可以先读已经出来的部分。
-- **思维导图与结构树双视图**：看全局关系，也看完成度；节点支持拖动重排、重命名、AI 重构结构。
-- **阅读 / 源码双模式**：正文是标准 Markdown（支持 LaTeX），渲染阅读与直接编辑随时切换，停止输入自动保存。
-- **学习组件页**：闪卡、速查表、自定义页。数据是固定 JSON 结构，AI 只填内容，因此可以稳定翻卡、检索与复用。
-- **与笔记本对话**：对话默认带着当前笔记本的结构与正文上下文；可开关联网检索，回答会标注依据页与本机资料。
-- **划词即用**：选中正文后可高亮、问 AI、复制，或用「AI 追问」——举例、形象化解释、快速例题、拆成步骤、补个反例。
-- **出处与附件**：每个小节可挂本机资料与网页来源，回答里能跳回具体依据。
-- **导入 / 导出**：整本归档为 zip，支持导出 PDF、打印、导入 zip；删除进系统回收站。
-- **中英双语 + 浅色 / 深色主题**：首次启动选择语言，设置里随时切换，AI 输出语言跟随界面。
-- **自带模型配置**：任何兼容 OpenAI Chat Completions 的服务都能接入，添加时可先做连通性测试。
+- **Structure before prose**: topic → scope & goals → chapter/section outline → section bodies. Edit the outline before generating, so a whole book never drifts off-target.
+- **Batch generation**: queue ungenerated siblings or an entire chapter/book; already-produced text stays readable while the rest streams in.
+- **Two views of the same notebook**: a mind map for the big picture and a tree for progress. Nodes can be dragged, renamed, and restructured by AI.
+- **Reading and source modes**: bodies are standard Markdown with LaTeX support. Switch between rendered reading and direct editing; autosaves when you stop typing.
+- **Study component pages**: flashcards, a glossary, and custom pages. Their JSON shape is fixed and the model only fills content, so they stay reliable and reusable.
+- **Chat with the notebook**: conversations carry the notebook's structure and bodies as context. Toggle web search per notebook; answers cite the pages and local files they rely on.
+- **Selection actions**: highlight, ask AI, copy — or use AI follow-ups for an example, an analogy, a quick quiz, step-by-step breakdown, or a counterexample.
+- **Sources and attachments**: attach local files and web pages to any section and jump back to the evidence from an answer.
+- **Import / export**: archive a notebook as zip, export PDF, print, import zip, and restore deleted notebooks from the system recycle bin.
+- **Bilingual UI and light/dark themes**: choose a language on first launch, switch anytime in Settings; AI output follows the UI language.
+- **Bring your own model**: any OpenAI-compatible Chat Completions endpoint works, with a connectivity test before saving.
 
-### 快速开始
+### Quick start
 
-#### 方式一：下载安装包
+#### Option 1 — installer
 
-到 [Releases](../../releases/latest) 下载 `Axonota Studio_x.y.z_x64-setup.exe`，双击安装。
+Download `Axonota Studio_x.y.z_x64-setup.exe` from [Releases](../../releases/latest) and run it.
 
-系统要求：Windows 10 / 11（自带 WebView2），无需单独安装运行时。
+Requirements: Windows 10/11 with WebView2 (preinstalled on modern Windows).
 
-#### 方式二：从源码运行
+#### Option 2 — from source
 
-需要：Node.js ≥ 20、Rust ≥ 1.77、Visual Studio Build Tools（C++ 桌面开发负载）。
+Requires Node.js ≥ 20, Rust ≥ 1.77, and Visual Studio Build Tools with the C++ desktop workload.
 
 ```bash
 git clone https://github.com/Guchigagu/axonota-studio.git
@@ -79,54 +79,54 @@ npm install
 npm run tauri dev -w @nb/desktop
 ```
 
-打包安装程序：
+Build the installer:
 
 ```bash
 npm run tauri build -w @nb/desktop
-# 产物：apps/desktop/src-tauri/target/release/bundle/nsis/
+# output: apps/desktop/src-tauri/target/release/bundle/nsis/
 ```
 
-> 提示：如果项目目录路径包含 `#` 等特殊字符，Rust/Tauri 构建可能失败，建议放在普通路径下构建。
+> Tip: if your project path contains characters such as `#`, the Rust/Tauri build may fail. Build from a plain path.
 
-#### 配置模型
+#### Configure a model
 
-打开 **设置 → 模型 → 添加模型**，填写：
+Open **Settings → Models → Add model** and fill in:
 
-| 字段 | 说明 |
+| Field | Notes |
 |---|---|
-| 名称 | 自定义显示名，例如「DeepSeek」 |
-| Base URL | OpenAI 兼容地址，例如 `https://api.deepseek.com/v1` |
-| API Key | 仅保存在本机 `settings.json`，不会上传 |
-| 模型 ID | 例如 `deepseek-chat` |
+| Name | Display name, e.g. “DeepSeek” |
+| Base URL | OpenAI-compatible endpoint, e.g. `https://api.deepseek.com/v1` |
+| API Key | Stored only in local `settings.json`, never uploaded |
+| Model ID | e.g. `deepseek-chat` |
 
-保存前可点击「测试连通性」。支持 OpenAI、DeepSeek、Moonshot、自建网关等兼容服务。
+Run the built-in connectivity test before saving. OpenAI, DeepSeek, Moonshot, and self-hosted gateways all work.
 
-#### 三步用起来
+#### Three steps
 
-1. 在工作台写清主题与要求（时限、用途、要交付什么），点 ↑ 生成大纲；
-2. 调整大纲，确认后生成；
-3. 打开任意小节开始读；选中文字问 AI，或生成闪卡 / 速查表复习。
+1. On the workspace, write the topic and requirements (deadline, purpose, deliverable), then press ↑ to draft an outline.
+2. Adjust the outline and confirm; generation starts.
+3. Open any section and read. Select text to ask AI, or generate flashcards / a glossary for review.
 
-没有模型也可以先点「没有模型？先看一个离线示例」，直接体验完整结构与组件页。
+No model yet? Click **“No model? See an offline demo”** to explore the full structure and component pages without any API key.
 
-### 数据与隐私
+### Data and privacy
 
-- 数据目录：`%APPDATA%\com.axonota.studio\vault`
-- 一本笔记本一个文件夹：
+- Data directory: `%APPDATA%\com.axonota.studio\vault`
+- One folder per notebook:
 
 ```text
 notebooks/<id>/
-├── notebook.md      # 主题、风格、大纲与节点索引
-├── nodes/<id>.md    # 每节正文（Markdown）
-├── files/           # 附件
-├── chat.jsonl       # 对话记录
-└── settings.json    # 模型与界面设置
+├── notebook.md      # topic, style, outline and node index
+├── nodes/<id>.md    # section bodies (Markdown)
+├── files/           # attachments
+├── chat.jsonl       # conversation log
+└── settings.json    # model and UI settings
 ```
 
-- API Key 只存本机；生成与对话时，相关上下文按需发送给你配置的模型服务。
-- 无账号体系、无云同步、无遥测。备份 = 复制 `vault` 目录。
+- API keys stay on this device. During generation and chat, only the relevant context is sent to the model service you configured.
+- No accounts, no cloud sync, no telemetry. Backup = copy the `vault` folder.
 
-### 技术栈与结构
+### Stack and layout
 
 <p align="center">
   <img src="docs/assets/logo.png" alt="Axonota" width="72" />
@@ -135,53 +135,53 @@ notebooks/<id>/
 ```text
 axonota-studio/
 ├── apps/desktop/        # Tauri 2 + React 18 + Vite + Tailwind + Zustand
-│   ├── src/             # 界面：工作台、笔记本、阅读器、对话、思维导图
-│   └── src-tauri/       # Rust 侧：文件、回收站、导出、系统调用
-├── packages/core/       # 零依赖引擎：Vault、生成流水线、提示词装配、AI 客户端
-├── prompts/             # 提示词库（按功能拆分，可单独审阅）
-├── scripts/             # 自测脚本
-└── docs/assets/         # README 图片
+│   ├── src/             # workspace, notebook, reader, chat, mind map
+│   └── src-tauri/       # Rust side: files, recycle bin, export, system calls
+├── packages/core/       # dependency-free engine: vault, pipeline, prompt assembly, AI client
+├── prompts/             # prompt library, split per feature and easy to review
+├── scripts/             # self-test
+└── docs/assets/         # README images
 ```
 
 ```mermaid
 flowchart LR
-  UI[React 界面] --> Store[Zustand Store]
+  UI[React UI] --> Store[Zustand store]
   Store --> Pipe[core / pipeline]
-  Pipe --> Prompts[prompts 提示词库]
-  Pipe --> AI[模型服务<br/>OpenAI 兼容]
+  Pipe --> Prompts[prompt library]
+  Pipe --> AI[Model service<br/>OpenAI compatible]
   Pipe --> Vault[(Vault<br/>Markdown + JSONL)]
   Store <--> Vault
 ```
 
-- **前端**：React 18、TypeScript、Vite、Tailwind、Zustand、CodeMirror、KaTeX
-- **桌面**：Tauri 2（Rust、WebView2、rusqlite、trash）
-- **引擎**：`packages/core` 不依赖任何第三方库，可在 Node 中独立跑自测
+- **Frontend**: React 18, TypeScript, Vite, Tailwind, Zustand, CodeMirror, KaTeX
+- **Desktop**: Tauri 2 (Rust, WebView2, rusqlite, trash)
+- **Engine**: `packages/core` has no third-party dependencies and can run its self-test in Node
 
-### 开发命令
+### Commands
 
 ```bash
-npm run dev -w @nb/desktop       # 只跑前端（浏览器调试模式，自动注入示例数据）
-npm run typecheck                # core + desktop 类型检查
-npm run selftest                 # core 引擎自测
-npm run tauri dev -w @nb/desktop # 完整桌面应用
+npm run dev -w @nb/desktop       # frontend only (browser mode with injected demo data)
+npm run typecheck                # type-check core + desktop
+npm run selftest                 # core engine self-test
+npm run tauri dev -w @nb/desktop # full desktop app
 npm run tauri build -w @nb/desktop
 ```
 
-### 已知限制
+### Known limitations
 
-- 目前只在 Windows 上构建与验证（Tauri 跨平台，但部分系统调用按 Windows 实现）。
-- 模型需兼容 OpenAI Chat Completions 且支持流式输出。
-- 不提供云同步与多人协作——这是有意为之，本地文件才是事实来源。
+- Built and verified on Windows only (Tauri is cross-platform, but some system calls are Windows-specific).
+- Models must be OpenAI Chat Completions compatible and support streaming.
+- No cloud sync or collaboration by design — local files are the source of truth.
 
-### 贡献
+### Contributing
 
-欢迎 Issue 与 PR。提交前请跑通：
+Issues and PRs are welcome. Before submitting, run:
 
 ```bash
 npm run typecheck && npm run selftest
 ```
 
-提示词改动请同步更新 `prompts/README.md`。
+If you change prompts, update `prompts/README.md` too.
 
 ### License
 
