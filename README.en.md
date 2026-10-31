@@ -73,7 +73,7 @@ Requirements: Windows 10/11 with WebView2 (preinstalled on modern Windows).
 Requires Node.js ≥ 20, Rust ≥ 1.77, and Visual Studio Build Tools with the C++ desktop workload.
 
 ```bash
-git clone https://github.com/your-name/axonota-studio.git
+git clone https://github.com/Guchigagu/axonota-studio.git
 cd axonota-studio
 npm install
 npm run tauri dev -w @nb/desktop

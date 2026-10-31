@@ -73,7 +73,7 @@ Axonota Studio 是一个 **本地优先（local-first）的 AI 学习笔记本**
 需要：Node.js ≥ 20、Rust ≥ 1.77、Visual Studio Build Tools（C++ 桌面开发负载）。
 
 ```bash
-git clone https://github.com/your-name/axonota-studio.git
+git clone https://github.com/Guchigagu/axonota-studio.git
 cd axonota-studio
 npm install
 npm run tauri dev -w @nb/desktop
